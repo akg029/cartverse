@@ -7,35 +7,39 @@ const navLinks = [
     id: 1,
     title: "Home",
     path: "/",
+    mobileHidden: false,
   },
   {
     id: 2,
     title: "Products",
     path: "/products",
+    mobileHidden: false,
   },
   {
     id: 3,
     title: "About",
     path: "/about",
+    mobileHidden: true,
   },
   {
     id: 4,
     title: "Cart",
     path: "/cart",
     icon: "bi-cart3",
+    mobileHidden: false,
   },
   {
     id: 5,
     title: "Login",
     path: "/login",
     icon: "bi-person-circle",
+    mobileHidden: false,
   },
 ];
 
 const Navbar = () => {
   return (
     <nav className="main-navbar">
-
       {/* Logo */}
 
       <div className="navbar-logo">
@@ -48,7 +52,6 @@ const Navbar = () => {
       {/* Search */}
 
       <div className="navbar-search">
-
         <i className="bi bi-search navbar-search-icon"></i>
 
         <input
@@ -56,46 +59,30 @@ const Navbar = () => {
           className="navbar-search-input"
           placeholder="Search products..."
         />
-
       </div>
 
-      {/* Menu */}
+      {/* Navigation */}
 
       <div className="navbar-menu">
-
         {navLinks.map((link) => (
-
           <NavLink
             key={link.id}
             to={link.path}
             end={link.path === "/"}
             className={({ isActive }) =>
-              isActive
-                ? "navbar-menu-link active-link"
-                : "navbar-menu-link"
+              `navbar-menu-link ${link.mobileHidden ? "about-link" : ""} ${
+                isActive ? "active-link" : ""
+              }`
             }
           >
-
-            {link.icon && (
-              <i className={`bi ${link.icon}`}></i>
-            )}
+            {link.icon && <i className={`bi ${link.icon}`}></i>}
 
             <span>{link.title}</span>
-
           </NavLink>
-
         ))}
 
-      </div>
-
-      {/* Theme Toggle */}
-
-      <div className="navbar-theme">
-
         <ThemeToggle />
-
       </div>
-
     </nav>
   );
 };
