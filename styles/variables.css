@@ -1,0 +1,52 @@
+:root {
+
+  /* ========= Colors ========= */
+
+  --primary-color: #0d6efd;
+  --primary-hover-color: #0b5ed7;
+
+  --text-color: #111827;
+  --text-light-color: #6b7280;
+
+  --background-color: #ffffff;
+
+  --border-color: #d1d5db;
+
+  --white-color: #ffffff;
+  --black-color: #000000;
+
+  /* ========= Font ========= */
+
+  --font-family: "Poppins", sans-serif;
+
+  /* ========= Font Sizes ========= */
+
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 22px;
+  --font-xxl: 30px;
+
+  /* ========= Font Weights ========= */
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* ========= Border Radius ========= */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 30px;
+
+  /* ========= Transition ========= */
+
+  --transition: all 0.3s ease;
+
+  /* ========= Shadow ========= */
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md: 0 5px 15px rgba(0,0,0,0.12);
+
+}
