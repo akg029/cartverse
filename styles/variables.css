@@ -1,52 +1,80 @@
 :root {
 
-  /* ========= Colors ========= */
+  /* ========= Brand Colors ========= */
 
-  --primary-color: #0d6efd;
-  --primary-hover-color: #0b5ed7;
+  --primary-color: #037171;
+  --primary-hover-color: #025f5f;
+
+  --secondary-color: #7e22ce;
+
+  /* ========= Text Colors ========= */
 
   --text-color: #111827;
   --text-light-color: #6b7280;
+  --heading-color: #111827;
+
+  /* ========= Background Colors ========= */
 
   --background-color: #ffffff;
+  --surface-color: #f8f9fa;
+
+  /* ========= Border ========= */
 
   --border-color: #d1d5db;
+
+  /* ========= Status ========= */
+
+  --success-color: #198754;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --info-color: #0dcaf0;
+
+  /* ========= Common ========= */
 
   --white-color: #ffffff;
   --black-color: #000000;
 
-  /* ========= Font ========= */
+  /* ========= Fonts ========= */
 
   --font-family: "Poppins", sans-serif;
 
-  /* ========= Font Sizes ========= */
-
+  --font-xs: 12px;
   --font-sm: 14px;
   --font-md: 16px;
   --font-lg: 18px;
   --font-xl: 22px;
   --font-xxl: 30px;
+  --font-display: 40px;
 
-  /* ========= Font Weights ========= */
+  /* ========= Font Weight ========= */
 
   --fw-normal: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
 
-  /* ========= Border Radius ========= */
+  /* ========= Radius ========= */
 
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 30px;
-
-  /* ========= Transition ========= */
-
-  --transition: all 0.3s ease;
+  --radius-xl: 50px;
 
   /* ========= Shadow ========= */
 
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-  --shadow-md: 0 5px 15px rgba(0,0,0,0.12);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+  --shadow-md: 0 5px 15px rgba(0,0,0,.12);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.15);
+
+  /* ========= Transition ========= */
+
+  --transition: all .3s ease;
+
+  /* ========= Z-index ========= */
+
+  --z-navbar: 1000;
+  --z-dropdown: 1010;
+  --z-modal: 1050;
+  --z-tooltip: 1100;
 
 }

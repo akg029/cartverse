@@ -1,82 +1,112 @@
-/* ===========================
-            Navbar
-=========================== */
+/* ===========================================
+                MAIN NAVBAR
+=========================================== */
 
 .main-navbar {
   width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 30px;
-
   padding: 18px 40px;
 
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
   background: var(--background-color);
-  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* ===========================
-             Logo
-=========================== */
+/* ===========================================
+                  LOGO
+=========================================== */
+
+.navbar-logo {
+  min-width: 170px;
+}
 
 .navbar-logo a {
-  text-decoration: none;
-  color: var(--text-color);
-
   font-size: var(--font-xxl);
   font-weight: var(--fw-bold);
+  color: var(--text-color);
 }
 
-/* ===========================
-            Search
-=========================== */
+.logo-c {
+  color: #7e22ce;
+}
+
+.logo-v {
+  color: #037171;
+}
+
+/* ===========================================
+                SEARCH
+=========================================== */
 
 .navbar-search {
-  flex: 1;
-  max-width: 500px;
+  flex: 1 1 520px;
+  max-width: 520px;
 
   display: flex;
   align-items: center;
 
   padding: 12px 18px;
 
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
 
   transition: var(--transition);
 }
 
 .navbar-search:hover {
-  border-color: var(--primary-color);
+  border-color: var(--primary-hover-color);
+}
+
+.navbar-search:focus-within {
+  border-color: var(--primary-hover-color);
+  box-shadow: 0 0 0 4px rgba(13, 110, 253, .15);
 }
 
 .navbar-search-icon {
   color: var(--text-light-color);
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .navbar-search-input {
-  width: 100%;
+  flex: 1;
+
   margin-left: 12px;
 
+  font-size: var(--font-md);
+
   background: transparent;
-  border: none;
-  outline: none;
 
-  font-size: var(--font-md);
+  color: var(--text-color);
 }
 
-/* ===========================
-        Navigation
-=========================== */
+.navbar-search-input::placeholder {
+  color: var(--text-light-color);
+}
 
-.navbar-links {
+/* ===========================================
+                  MENU
+=========================================== */
+
+.navbar-menu {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
 }
 
-.navbar-link {
-  text-decoration: none;
+.navbar-menu-link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  white-space: nowrap;
 
   color: var(--text-color);
 
@@ -86,119 +116,150 @@
   transition: var(--transition);
 }
 
-.navbar-link:hover {
+.navbar-menu-link i {
+  font-size: 18px;
+}
+
+.navbar-menu-link:hover {
   color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
-/* ===========================
-          Actions
-=========================== */
+/* Underline Animation */
 
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
+.navbar-menu-link::after {
+  content: "";
 
-.navbar-action-link {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+  position: absolute;
 
-  text-decoration: none;
+  left: 0;
+  bottom: -6px;
 
-  color: var(--text-color);
+  width: 0;
 
-  font-size: var(--font-md);
-  font-weight: var(--fw-medium);
+  height: 2px;
+
+  background: var(--primary-color);
 
   transition: var(--transition);
 }
 
-.navbar-action-link:hover {
-  color: var(--primary-color);
+.navbar-menu-link:hover::after,
+.active-link::after {
+  width: 100%;
 }
-
-.navbar-action-link i {
-  font-size: 20px;
-}
-
-/* ===========================
-         Active Link
-=========================== */
 
 .active-link {
   color: var(--primary-color);
   font-weight: var(--fw-semibold);
 }
 
-/* ===========================
-           Tablet
-=========================== */
+/* ===========================================
+             THEME TOGGLE
+=========================================== */
+
+.navbar-theme {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+}
+
+/* ===========================================
+                TABLET
+=========================================== */
 
 @media (max-width: 992px) {
-  .main-navbar {
-    flex-wrap: wrap;
-    justify-content: center;
 
-    padding: 20px;
+  .main-navbar {
+
+    flex-direction: column;
+
+    align-items: stretch;
 
     gap: 20px;
+
+    padding: 20px;
   }
 
   .navbar-logo {
-    width: 100%;
-    text-align: center;
+
+    display: flex;
+
+    justify-content: center;
+
+    min-width: auto;
   }
 
   .navbar-search {
-    flex: 100%;
+
     max-width: 100%;
   }
 
-  .navbar-links {
-    width: 100%;
+  .navbar-menu {
+
     justify-content: center;
-    flex-wrap: wrap;
+
+    gap: 26px;
+
+    flex-wrap: nowrap;
   }
 
-  .navbar-actions {
-    width: 100%;
+  .navbar-theme {
+
     justify-content: center;
+
+    margin-left: 0;
   }
+
 }
 
-/* ===========================
-            Mobile
-=========================== */
+/* ===========================================
+                 MOBILE
+=========================================== */
 
 @media (max-width: 576px) {
+
   .main-navbar {
+
     padding: 15px;
-    gap: 18px;
   }
 
   .navbar-logo a {
+
     font-size: 26px;
   }
 
-  .navbar-links {
-    gap: 16px;
-  }
-
-  .navbar-link {
-    font-size: 15px;
-  }
-
-  .navbar-actions {
-    gap: 16px;
-  }
-
-  .navbar-action-link {
-    font-size: 15px;
-  }
-
   .navbar-search {
+
     padding: 10px 15px;
   }
+
+  .navbar-menu {
+
+    justify-content: flex-start;
+
+    gap: 22px;
+
+    overflow-x: auto;
+
+    scrollbar-width: none;
+
+    -ms-overflow-style: none;
+  }
+
+  .navbar-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar-menu-link {
+
+    font-size: 15px;
+  }
+
+  .navbar-theme {
+
+    justify-content: center;
+  }
+
 }

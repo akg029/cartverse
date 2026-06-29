@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Navbar.css";
 
 const navLinks = [
@@ -17,71 +18,84 @@ const navLinks = [
     title: "About",
     path: "/about",
   },
+  {
+    id: 4,
+    title: "Cart",
+    path: "/cart",
+    icon: "bi-cart3",
+  },
+  {
+    id: 5,
+    title: "Login",
+    path: "/login",
+    icon: "bi-person-circle",
+  },
 ];
 
 const Navbar = () => {
   return (
     <nav className="main-navbar">
+
       {/* Logo */}
 
       <div className="navbar-logo">
-        <NavLink to="/">CartVerse</NavLink>
+        <NavLink to="/">
+          <span className="logo-c">C</span>art
+          <span className="logo-v">V</span>erse
+        </NavLink>
       </div>
 
       {/* Search */}
 
       <div className="navbar-search">
+
         <i className="bi bi-search navbar-search-icon"></i>
 
         <input
-          className="navbar-search-input"
           type="text"
+          className="navbar-search-input"
           placeholder="Search products..."
         />
+
       </div>
 
-      {/* Navigation */}
+      {/* Menu */}
 
-      <div className="navbar-links">
+      <div className="navbar-menu">
+
         {navLinks.map((link) => (
+
           <NavLink
             key={link.id}
             to={link.path}
             end={link.path === "/"}
             className={({ isActive }) =>
-              isActive ? "navbar-link active-link" : "navbar-link"
+              isActive
+                ? "navbar-menu-link active-link"
+                : "navbar-menu-link"
             }
           >
-            {link.title}
+
+            {link.icon && (
+              <i className={`bi ${link.icon}`}></i>
+            )}
+
+            <span>{link.title}</span>
+
           </NavLink>
+
         ))}
+
       </div>
 
-      {/* Right Section */}
+      {/* Theme Toggle */}
 
-      <div className="navbar-actions">
-        <NavLink
-          to="/cart"
-          className={({ isActive }) =>
-            isActive ? "navbar-action-link active-link" : "navbar-action-link"
-          }
-        >
-          <i className="bi bi-cart3"></i>
+      <div className="navbar-theme">
 
-          <span>Cart</span>
-        </NavLink>
+        <ThemeToggle />
 
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            isActive ? "navbar-action-link active-link" : "navbar-action-link"
-          }
-        >
-          <i className="bi bi-person-circle"></i>
-
-          <span>Login</span>
-        </NavLink>
       </div>
+
     </nav>
   );
 };

@@ -1,5 +1,8 @@
-body {
+/* ===========================================
+                Global Styles
+=========================================== */
 
+body {
   font-family: var(--font-family);
 
   color: var(--text-color);
@@ -8,45 +11,53 @@ body {
 
   overflow-x: hidden;
 
+  transition: var(--transition);
 }
 
-/* Links */
+/* ===========================================
+                Dark Theme
+=========================================== */
+
+[data-theme="dark"] {
+
+  --background-color: #111827;
+
+  --surface-color: #1f2937;
+
+  --text-color: #f9fafb;
+
+  --heading-color: #ffffff;
+
+  --text-light-color: #d1d5db;
+
+  --border-color: #374151;
+
+}
+
+/* ===========================================
+                  Links
+=========================================== */
 
 a {
-
   text-decoration: none;
-
   color: inherit;
-
 }
 
-/* Images */
+/* ===========================================
+                  Images
+=========================================== */
 
 img {
-
-  max-width: 100%;
-
   display: block;
-
+  max-width: 100%;
 }
 
-/* Buttons */
+/* ===========================================
+                  Buttons
+=========================================== */
 
 button {
-
   cursor: pointer;
-
-  border: none;
-
-  outline: none;
-
-  background: none;
-
-}
-
-/* Inputs */
-
-input {
 
   border: none;
 
@@ -54,13 +65,60 @@ input {
 
   background: transparent;
 
+  font-family: inherit;
 }
 
-/* Lists */
+/* ===========================================
+                  Inputs
+=========================================== */
+
+input,
+textarea {
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-family: inherit;
+}
+
+/* ===========================================
+                  Lists
+=========================================== */
 
 ul,
 ol {
-
   list-style: none;
+}
 
+/* ===========================================
+            Scrollbar (Chrome)
+=========================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover-color);
+}
+
+/* ===========================================
+              Text Selection
+=========================================== */
+
+::selection {
+  background: var(--primary-color);
+  color: var(--white-color);
 }
