@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 import "./Navbar.css";
 
@@ -38,6 +38,11 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const location = useLocation();
+
+  const authPages = ["/login", "/register"];
+
+  const hideSearch = authPages.includes(location.pathname);
   return (
     <nav className="main-navbar">
       {/* Logo */}
@@ -51,15 +56,17 @@ const Navbar = () => {
 
       {/* Search */}
 
-      <div className="navbar-search">
-        <i className="bi bi-search navbar-search-icon"></i>
+      {!hideSearch && (
+        <div className="navbar-search">
+          <i className="bi bi-search navbar-search-icon"></i>
 
-        <input
-          type="text"
-          className="navbar-search-input"
-          placeholder="Search products..."
-        />
-      </div>
+          <input
+            type="text"
+            className="navbar-search-input"
+            placeholder="Search products..."
+          />
+        </div>
+      )}
 
       {/* Navigation */}
 
