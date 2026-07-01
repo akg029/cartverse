@@ -1,0 +1,222 @@
+/* ===========================================
+              REGISTER PAGE
+=========================================== */
+
+.register-page {
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  background: var(--background-color);
+}
+
+/* ===========================================
+            REGISTER CONTAINER
+=========================================== */
+
+.register-container {
+  width: 100%;
+  max-width: 480px;
+
+  padding: 40px 35px;
+
+  background: var(--background-color);
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ===========================================
+                HEADING
+=========================================== */
+
+.register-title {
+  text-align: center;
+
+  color: var(--heading-color);
+
+  font-size: var(--font-xxl);
+
+  margin-bottom: 10px;
+}
+
+.register-subtitle {
+  text-align: center;
+
+  color: var(--text-light-color);
+
+  font-size: var(--font-md);
+
+  margin-bottom: 35px;
+}
+
+/* ===========================================
+                  FORM
+=========================================== */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+/* ===========================================
+              INPUT GROUP
+=========================================== */
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.input-group label {
+  color: var(--text-color);
+
+  font-size: var(--font-sm);
+
+  font-weight: var(--fw-medium);
+}
+
+.input-group input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: var(--radius-sm);
+
+  background: var(--background-color);
+
+  color: var(--text-color);
+
+  font-size: var(--font-md);
+
+  transition: var(--transition);
+}
+
+.input-group input::placeholder {
+  color: var(--text-light-color);
+}
+
+.input-group input:focus {
+  border-color: var(--primary-color);
+
+  box-shadow: 0 0 0 3px rgba(3, 113, 113, 0.12);
+}
+
+/* ===========================================
+              ERROR
+=========================================== */
+
+.error-message {
+  margin-top: 5px;
+
+  color: var(--danger-color);
+
+  font-size: var(--font-sm);
+
+  font-weight: var(--fw-medium);
+}
+
+.input-error {
+  border-color: var(--danger-color) !important;
+}
+
+/* ===========================================
+            REGISTER BUTTON
+=========================================== */
+
+.register-btn {
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 10px;
+
+  border-radius: var(--radius-sm);
+
+  background: var(--primary-color);
+
+  color: var(--white-color);
+
+  font-size: var(--font-md);
+
+  font-weight: var(--fw-semibold);
+
+  transition: var(--transition);
+}
+
+.register-btn:hover {
+  background: var(--primary-hover-color);
+}
+
+/* ===========================================
+              LOGIN LINK
+=========================================== */
+
+.login-text {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: var(--text-light-color);
+
+  font-size: var(--font-sm);
+}
+
+.login-text a {
+  color: var(--primary-color);
+
+  font-weight: var(--fw-semibold);
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================================
+                TABLET
+=========================================== */
+
+@media (max-width: 768px) {
+  .register-container {
+    padding: 35px 25px;
+  }
+}
+
+/* ===========================================
+                MOBILE
+=========================================== */
+
+@media (max-width: 576px) {
+  .register-page {
+    padding: 25px 15px;
+  }
+
+  .register-container {
+    padding: 30px 20px;
+  }
+
+  .register-title {
+    font-size: 26px;
+  }
+
+  .register-subtitle {
+    font-size: 14px;
+  }
+
+  .input-group input {
+    padding: 12px 14px;
+  }
+}
